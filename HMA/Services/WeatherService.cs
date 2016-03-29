@@ -11,16 +11,15 @@ namespace HMA.Services
   {
     public async Task<double> GetTodaysTemperature()
     {
-      string weburl = "http://api.openweathermap.org/data/2.5/forecast/city?id=3081368&APPID={197369b7e92d99c4718b5821424c7840} ";
+      string weburl = "http://api.openweathermap.org/data/2.5/forecast/city?id=3081368&APPID=c7cd5ea156fa1a32bde78b54d0beaae1&mode=xml&units=metric&cnt=1";
 
       try
       {
-        WebClient webCLient = new WebClient();
-        var result = await webCLient.DownloadStringTaskAsync(new Uri(weburl));
+        var result = await new WebClient().DownloadStringTaskAsync(new Uri(weburl));
         XmlDocument doc = new XmlDocument();
         doc.LoadXml(result);
-        string szTemp = doc.DocumentElement.SelectSingleNode("temperature").Attributes["value"].Value;
-        double temp = double.Parse(szTemp) - 273.16;
+        string szTemp = doc.DocumentElement.SelectSingleNode("forecast").SelectSingleNode("time").SelectSingleNode("temperature").Attributes["value"].Value;
+        double temp = double.Parse(szTemp.Replace('.',','));
         return temp;
       }
       catch (Exception e)
