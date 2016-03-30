@@ -59,7 +59,7 @@ namespace HMA.Repositories
         {
           list.Add(new ComingHomeModel()
             {
-              Date = o.ToString(),
+              Date = DateTime.ParseExact(o.ToString(),"dd.MM.yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture),
               Hour = range1.ToString()
             });
         }

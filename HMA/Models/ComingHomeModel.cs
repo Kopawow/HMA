@@ -1,8 +1,10 @@
-﻿namespace HMA.Models
+﻿using System;
+
+namespace HMA.Models
 {
   public class ComingHomeModel
   {
-    public string Date { get; set; } 
+    public DateTime Date { get; set; } 
     public string Hour { get; set; } 
   }
 }

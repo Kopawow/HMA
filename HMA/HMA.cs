@@ -72,7 +72,7 @@ namespace HMA
       var currentDateTime = DateTime.Now;
       var model = new ComingHomeModel()
       {
-        Date = currentDateTime.Date.ToString(CultureInfo.InvariantCulture),
+        Date = currentDateTime.Date,
         Hour = currentDateTime.Hour.ToString()+" "+currentDateTime.Minute.ToString()
       };
 
