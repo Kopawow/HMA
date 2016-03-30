@@ -31,6 +31,7 @@
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.bGetWeather = new System.Windows.Forms.Button();
       this.License = new System.Windows.Forms.TextBox();
+      this.bImHome = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // textBox1
@@ -57,11 +58,22 @@
       this.License.Size = new System.Drawing.Size(260, 20);
       this.License.TabIndex = 2;
       // 
+      // bImHome
+      // 
+      this.bImHome.Location = new System.Drawing.Point(99, 154);
+      this.bImHome.Name = "bImHome";
+      this.bImHome.Size = new System.Drawing.Size(75, 23);
+      this.bImHome.TabIndex = 3;
+      this.bImHome.Text = "Wróciłem";
+      this.bImHome.UseVisualStyleBackColor = true;
+      this.bImHome.Click += new System.EventHandler(this.bImHome_Click);
+      // 
       // HMA
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(284, 261);
+      this.Controls.Add(this.bImHome);
       this.Controls.Add(this.License);
       this.Controls.Add(this.bGetWeather);
       this.Controls.Add(this.textBox1);
@@ -77,6 +89,7 @@
     private System.Windows.Forms.TextBox textBox1;
     private System.Windows.Forms.Button bGetWeather;
     private System.Windows.Forms.TextBox License;
+    private System.Windows.Forms.Button bImHome;
   }
 }
 
