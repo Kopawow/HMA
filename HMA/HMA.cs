@@ -73,7 +73,8 @@ namespace HMA
       var model = new ComingHomeModel()
       {
         Date = currentDateTime.Date,
-        Hour = currentDateTime.Hour.ToString()+" "+currentDateTime.Minute.ToString()
+        Hour = currentDateTime.Hour.ToString(),
+        Minutes = currentDateTime.Minute.ToString()
       };
 
       _list.Add(model);

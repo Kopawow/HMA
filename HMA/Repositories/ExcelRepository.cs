@@ -26,7 +26,7 @@ namespace HMA.Repositories
       {
         var j = 1;
         xlWorkSheet.Cells[i, j] = var.Date;
-        xlWorkSheet.Cells[i, j+1] = var.Hour;
+        xlWorkSheet.Cells[i, j+1] = var.Hour+" "+var.Minutes;
         i++;
       }
 
@@ -54,13 +54,15 @@ namespace HMA.Repositories
       for (rCnt = 1; rCnt <= range.Rows.Count; rCnt++)
       {
         var o = (range.Cells[rCnt,1] as Excel.Range).get_Value();
-        var range1 = (range.Cells[rCnt, 2] as Excel.Range).get_Value();
-        if (o != null && range1 != null)
+        var p = (range.Cells[rCnt, 2] as Excel.Range).get_Value();
+        if (o != null && p != null)
         {
+          var hour = p.ToString();
           list.Add(new ComingHomeModel()
             {
               Date = DateTime.ParseExact(o.ToString(),"dd.MM.yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture),
-              Hour = range1.ToString()
+              Hour = hour[0].ToString() + hour[1].ToString(),
+              Minutes = hour[3].ToString() + hour[4].ToString()
             });
         }
       }

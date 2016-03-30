@@ -6,5 +6,6 @@ namespace HMA.Models
   {
     public DateTime Date { get; set; } 
     public string Hour { get; set; } 
+    public string Minutes { get; set; } 
   }
 }
