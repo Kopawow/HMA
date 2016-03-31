@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -78,6 +79,18 @@ namespace HMA
       };
 
       _list.Add(model);
+    }
+
+    private List<ComingHomeModel> GetAllModelForWeekday()
+    {
+      var day = DateTime.Now.DayOfWeek;
+      var listOdWeekDay = _list.Where(x => x.Date.DayOfWeek == day);
+      return listOdWeekDay.ToList();
+    }
+
+    private void bGetAllFromWeekDay_Click(object sender, EventArgs e)
+    {
+      var list = GetAllModelForWeekday();
     }
   }
 }

@@ -32,6 +32,7 @@
       this.bGetWeather = new System.Windows.Forms.Button();
       this.License = new System.Windows.Forms.TextBox();
       this.bImHome = new System.Windows.Forms.Button();
+      this.bGetAllFromWeekDay = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // textBox1
@@ -68,11 +69,22 @@
       this.bImHome.UseVisualStyleBackColor = true;
       this.bImHome.Click += new System.EventHandler(this.bImHome_Click);
       // 
+      // bGetAllFromWeekDay
+      // 
+      this.bGetAllFromWeekDay.Location = new System.Drawing.Point(180, 63);
+      this.bGetAllFromWeekDay.Name = "bGetAllFromWeekDay";
+      this.bGetAllFromWeekDay.Size = new System.Drawing.Size(75, 48);
+      this.bGetAllFromWeekDay.TabIndex = 4;
+      this.bGetAllFromWeekDay.Text = "Wszystkie z dnia tygodnia";
+      this.bGetAllFromWeekDay.UseVisualStyleBackColor = true;
+      this.bGetAllFromWeekDay.Click += new System.EventHandler(this.bGetAllFromWeekDay_Click);
+      // 
       // HMA
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(284, 261);
+      this.Controls.Add(this.bGetAllFromWeekDay);
       this.Controls.Add(this.bImHome);
       this.Controls.Add(this.License);
       this.Controls.Add(this.bGetWeather);
@@ -90,6 +102,7 @@
     private System.Windows.Forms.Button bGetWeather;
     private System.Windows.Forms.TextBox License;
     private System.Windows.Forms.Button bImHome;
+    private System.Windows.Forms.Button bGetAllFromWeekDay;
   }
 }
 
